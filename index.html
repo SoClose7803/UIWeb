@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <title> Document </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <title>Centered Table</title>
+    <style>
+    body {
+      position: relative; /* Đặt vị trí tương đối để có thể sử dụng top, right, bottom, left */
+      height: 50vh;
+      margin: 0;
+    }
+
+    table {
+      border: 1px solid #000; /* Để hiển thị đường biên */
+      width:  80%;
+      height: 200px;
+      position: absolute;
+      top : 50%; 
+      left: 10%;
+    }
+    </style>
+   </head>
+<body>
+  <input type="checkbox" id="check">
+  <label class="button bars" for="check"><i class="fas fa-bars"></i></label>
+  <div class="side_bar">
+    <div class="title">
+      <div class="logo">TuanAnhHospital</div>
+      <label class=" button cancel" for="check"><i class="fas fa-times"></i></label>
+    </div>
+    <ul>
+      <li><a href="file:///C:/Users/thres/OneDrive/M%C3%A1y%20t%C3%ADnh/Hospital/zProjectforChien/index.html"><i class="fas fa-qrcode"></i>Quản Lý Nhân Viên</a></li>
+      <li><a href="file:///C:/Users/thres/OneDrive/M%C3%A1y%20t%C3%ADnh/Hospital/zProjectforChien/index2.html"><i class="fas fa-link"></i>Quản Lý Khoa </a></li>
+      <li><a href="file:///C:/Users/thres/OneDrive/M%C3%A1y%20t%C3%ADnh/Hospital/zProjectforChien/index3.html"><i class="fas fa-stream"></i>Quản Lý Chuyên Ngành </a></li>
+      <li><a href="file:///C:/Users/thres/OneDrive/M%C3%A1y%20t%C3%ADnh/Hospital/zProjectforChien/index4.html"><i class="fas fa-calendar-week"></i>Quản Lý Bệnh Nhân </a></li>
+      <li><a href="file:///C:/Users/thres/OneDrive/M%C3%A1y%20t%C3%ADnh/Hospital/zProjectforChien/index5.html"><i class="fas fa-question-circle"></i>Quản Lý Thuốc</a></li>
+      <li><a href="file:///C:/Users/thres/OneDrive/M%C3%A1y%20t%C3%ADnh/Hospital/zProjectforChien/index6.html"><i class="fas fa-sliders-h"></i>Nhà Cung Ứng Thuốc</a></li>  
+        </ul>
+  </div>
+  <table border="1">
+    <!-- Định nghĩa tiêu đề bảng -->
+    <thead>
+        <tr>
+            <th>Mã Sô Nhân Viên</th>
+            <th>Họ và Tên </th>
+            <th>Ngày Sinh </th>
+            <th>Giới Tính </th>
+            <th>Địa Chỉ</th>
+            <th>Ngày Bắt Đầu Làm Việc</th>
+            <th>Mã Số Khoa </th>
+        </tr>
+    </thead>
+    <!-- Định nghĩa nội dung của bảng -->
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <!-- Các dòng khác nếu có -->
+    </tbody>
+</table>
+
+<script>
+  function filterTable() {
+    var genderFilter = document.getElementById('genderFilter').value;
+    var table = document.getElementById('patientTable');
+    var rows = table.getElementsByTagName('tr');
+
+    for (var i = 1; i < rows.length; i++) {
+      var genderCell = rows[i].getElementsByTagName('td')[3];
+
+      if (genderFilter === 'all' || genderCell.innerHTML.toLowerCase() === genderFilter) {
+        rows[i].style.display = '';
+      } else {
+        rows[i].style.display = 'none';
+      }
+    }
+  }
+</script>
+  <div class="content">
+    <h1>Quản lý Nhân Viên</h1>
+    <h2>Chọn loại người chăm sóc:</h2>
+    <form>
+        <label for="roles">Chọn vai trò:</label>
+        <select id="roles" name="roles">
+            <option value="bacsi">Bác sĩ</option>
+            <option value="yta">Y tá</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Xác nhận">
+    </form>
+  </div>
+</body>
+</html>
